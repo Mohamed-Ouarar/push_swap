@@ -21,6 +21,44 @@ stack	*ft_lstlast(stack *lst)
 	return (lst);
 }
 
+
+void pa(stack **a, stack **b)
+{
+	push(a, b);
+	write(1, "pa\n", 3);
+}
+
+void ra(stack **a)
+{
+	rotate(a);
+	write(1 ,"ra\n", 3);
+}
+
+void rb(stack **b)
+{
+	rotate(b);
+	write(1 ,"ra\n", 3);
+}
+
+void rra(stack **a)
+{
+	reverse_rotate(a);
+	write(1 ,"rra\n", 3);
+}
+
+void rrb(stack **b)
+{
+	reverse_rotate(b);
+	write(1 ,"ra\n", 3);
+}
+
+void pb(stack **a, stack **b)
+{
+	push(b, a);
+	write(1, "pb\n", 3);
+}
+
+
 void	push(stack **dst, stack **src)
 {
 	stack *node_to_push;
@@ -70,6 +108,24 @@ void reverse_rotate(stack **node)
     *node = last;
     last->next->past = last;
 }
+
+
+void sa(stack **node)
+{
+	write(1, "sa\n", 3);
+	swap(node);
+}
+void sb(stack **node)
+{
+	write(1, "sb\n", 3);
+	swap(node);
+}
+void ss(stack **node)
+{
+	write(1, "ss\n", 3);
+	swap(node);
+}
+
 
 void swap(stack **node)
 {

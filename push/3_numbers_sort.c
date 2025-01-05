@@ -183,3 +183,13 @@ void push_swap(stack **a, stack **b)
 		while ( *a != smallest)
 			rra(a);	
 }
+
+
+void	init_nodes(stack *a, stack *b)
+{
+	set_index(a);
+	set_index(b);
+	set_target_node(a, b);
+	set_price(a, b);
+	set_cheapest(b)
+}
