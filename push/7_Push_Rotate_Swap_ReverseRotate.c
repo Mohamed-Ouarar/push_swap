@@ -6,20 +6,11 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 11:44:04 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/04 13:30:58 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:04:44 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-stack	*ft_lstlast(stack *lst)
-{
-	if (!lst)
-		return (NULL);
-	while (lst ->next != NULL)
-		lst = lst -> next;
-	return (lst);
-}
 
 void	push(stack **dst, stack **src)
 {
@@ -88,4 +79,3 @@ void swap(stack **node)
 
 	*node = head;
 }
-

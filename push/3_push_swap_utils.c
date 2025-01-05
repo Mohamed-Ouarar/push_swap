@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_utils _1.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:44:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/04 13:47:54 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/05 14:26:17 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,21 @@ stack	*ft_lstlast(stack *lst)
 	while (lst ->next != NULL)
 		lst = lst -> next;
 	return (lst);
+}
+
+int stack_len(stack *node)
+{
+	int	count;
+
+	count = 0;
+	if (!node)
+		return 0;
+	while (node)
+	{
+		count++;
+		node = node->next;
+	}
+	return (count);
 }
 
 int max_value(stack **node)
@@ -56,36 +71,14 @@ stack *find_smallest(stack *node)
 	}
 	return (smallest);
 }
-int stack_len(stack *node)
-{
-	int	count;
 
-	count = 0;
-	if (!node)
-		return 0;
+stack *return_cheapest(stack *node)
+{
 	while (node)
 	{
-		count++;
+		if (node->cheapest)
+			return (node);
 		node = node->next;
 	}
-	return (count);
-}
-
-void set_index(stack *node)
-{
-	int i;
-	int mid;
-
-	i = 0;
-	mid = stack_len(node) / 2;
-	while (node)
-	{
-		node->index = i;
-		if (i <= mid)
-			node->aboce_median = true;
-		else
-			node->aboce_median = false;
-		i++;
-		node = node->next;
-	}
+	return (NULL);
 }

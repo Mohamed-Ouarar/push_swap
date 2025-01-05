@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"push_swap.h": "c",
+		"algorithm": "c",
+		"__node_handle": "c"
+	}
+}
