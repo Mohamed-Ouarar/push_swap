@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_numbers_sort.c                                   :+:      :+:    :+:   */
+/*   2_3_numbers_sort.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:51:05 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/05 14:35:07 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/11 13:44:45 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void three_sort(stack **node)
+void	three_sort(stack **node)
 {
-	int max_number;
+	int	max_number;
 
-	max_number = max_value(&node);
+	max_number = max_value(node);
 	if ((*node)->value == max_number)
 		ra(node);
 	else if ((*node)->next->value == max_number)
@@ -25,21 +25,23 @@ void three_sort(stack **node)
 		sa(node);
 }
 
-void move_nodes(stack **a, stack **b)
+void	move_nodes(stack **a, stack **b)
 {
-	stack *cheaapest_node;
+	stack	*cheaapest_node;
 
 	cheaapest_node = return_cheapest(*b);
-	if (cheaapest_node->aboce_median && cheaapest_node->tarhet_node->aboce_median)
+	if (cheaapest_node->aboce_median && \
+		cheaapest_node->tarhet_node->aboce_median)
 		rotate_both(a, b, cheaapest_node);
-	else if (!cheaapest_node->aboce_median && !cheaapest_node->tarhet_node->aboce_median)
+	else if (!(cheaapest_node->aboce_median) && \
+		!(cheaapest_node->tarhet_node->aboce_median))
 		reverse_rotate_both(a, b, cheaapest_node);
 	finish_rotation(a, cheaapest_node->tarhet_node, 'a');
 	finish_rotation(b, cheaapest_node, 'b');
 	pa(a, b);
 }
 
-void rotate_both(stack **a , stack **b, stack *cheapest)
+void	rotate_both(stack **a, stack **b, stack *cheapest)
 {
 	while (*a != cheapest->tarhet_node && *b != cheapest)
 		rr(a, b);
@@ -47,7 +49,7 @@ void rotate_both(stack **a , stack **b, stack *cheapest)
 	set_index(*b);
 }
 
-void reverse_rotate_both(stack **a,stack **b, stack *cheapest)
+void	reverse_rotate_both(stack **a, stack **b, stack *cheapest)
 {
 	while (*a != cheapest->tarhet_node && *b != cheapest)
 		rrr(a, b);
@@ -55,18 +57,18 @@ void reverse_rotate_both(stack **a,stack **b, stack *cheapest)
 	set_index(*b);
 }
 
-void finish_rotation(stack **node, stack *top_node , char stack)
+void	finish_rotation(stack **node, stack *top_node, char stack)
 {
 	while (*node != top_node)
 	{
-		if (stack = 'a')
+		if (stack == 'a')
 		{
 			if (top_node->aboce_median)
 				ra(node);
 			else
 				rra(node);
 		}
-		if (stack = 'b')
+		if (stack == 'b')
 		{
 			if (top_node->aboce_median)
 				rb(node);
@@ -76,14 +78,14 @@ void finish_rotation(stack **node, stack *top_node , char stack)
 	}
 }
 
-void push_swap(stack **a, stack **b)
+void	push_swap(stack **a, stack **b)
 {
-	stack *smallest;
+	stack	*smallest;
 	int		len_a;
 
 	len_a = stack_len(*a);
 	while (len_a-- > 3)
-		pd(b, a);
+		pb(a, b);
 	three_sort(a);
 	while (*b)
 	{
@@ -92,10 +94,11 @@ void push_swap(stack **a, stack **b)
 	}
 	set_index(*a);
 	smallest = find_smallest(*a);
+	finish_rotation(a, smallest,'a');
 	if (smallest->aboce_median)
 		while (*a != smallest)
 			ra(a);
-	else 
-		while ( *a != smallest)
-			rra(a);	
+	else
+		while (*a != smallest)
+			rra(a);
 }

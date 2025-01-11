@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:54:19 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/05 14:40:40 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/11 09:21:01 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,58 @@ char	**ft_split(char const *s, char c)
 	if (!ptr)
 		return (NULL);
 	return (fill(ptr, s, c));
+}
+
+char	*ft_strdup(const char *s1)
+{
+	char	*ptr;
+	int		i;
+
+	i = 0;
+	ptr = (char *)(malloc(sizeof(char) * (ft_strlen(s1) + 1)));
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*ptr;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if ((ft_strlen(s) - start) < len)
+		ptr = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+	else
+		ptr = malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (*(s + start + i) && (len > 0))
+	{
+		*(ptr + i) = *(s + start + i);
+		i++;
+		len--;
+	}
+	*(ptr + i) = '\0';
+	return (ptr);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

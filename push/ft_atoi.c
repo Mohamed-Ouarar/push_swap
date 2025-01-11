@@ -6,36 +6,22 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:05:54 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/05 14:40:29 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/10 13:24:59 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	overflow_handle(long r, int s, const char *str)
-{
-	if (r > (9223372036854775807 / 10) || (r == (9223372036854775807 / 10) \
-		&& (*str - '0') > (9223372036854775807 % 10)))
-	{
-		if (s == -1)
-			return (0);
-		return (-1);
-	}
-	return (1);
-}
-
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int				i;
 	int				sign;
-	int				overflow_check;
 	long			result;
+	long			error;
 
 	sign = 1;
 	i = 0;
 	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
@@ -44,11 +30,10 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
-		overflow_check = overflow_handle(result, sign, &str[i]);
-		if (overflow_check != 1)
-			return (overflow_check);
 		result = result * 10 + str[i] - 48;
 		i++;
 	}
-	return ((int)(result * sign));
+	if (str[i] && (str[i] < '0' || str[i] > '9'))
+		return (LONG_MAX);
+	return (result * sign);
 }

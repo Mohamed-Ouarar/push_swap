@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils _1.c                               :+:      :+:    :+:   */
+/*   3_push_swap_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:44:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/05 14:26:17 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/11 12:16:04 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ stack	*ft_lstlast(stack *lst)
 	return (lst);
 }
 
-int stack_len(stack *node)
+int	stack_len(stack *node)
 {
 	int	count;
 
 	count = 0;
 	if (!node)
-		return 0;
+		return (0);
 	while (node)
 	{
 		count++;
@@ -36,10 +36,10 @@ int stack_len(stack *node)
 	return (count);
 }
 
-int max_value(stack **node)
+int	max_value(stack **node)
 {
-	stack *tmp;
-	int max;
+	stack	*tmp;
+	int		max;
 
 	max = INT_MIN;
 	tmp = *node;
@@ -52,11 +52,11 @@ int max_value(stack **node)
 	return (max);
 }
 
-stack *find_smallest(stack *node)
+stack	*find_smallest(stack *node)
 {
-	stack *smallest;
-	long max;
-	
+	stack	*smallest;
+	long	max;
+
 	if (!node)
 		return (NULL);
 	max = LONG_MAX;
@@ -72,8 +72,10 @@ stack *find_smallest(stack *node)
 	return (smallest);
 }
 
-stack *return_cheapest(stack *node)
+stack	*return_cheapest(stack *node)
 {
+	if (NULL == node)
+        return (NULL);
 	while (node)
 	{
 		if (node->cheapest)

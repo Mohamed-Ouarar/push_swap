@@ -1,37 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r_and_rr.c                                         :+:      :+:    :+:   */
+/*   5_ra_rb_rra_rrb.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:01:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/05 14:01:52 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/11 09:13:17 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ra(stack **a)
+void	ra(stack **a)
 {
 	rotate(a);
-	write(1 ,"ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
-void rb(stack **b)
+void	rb(stack **b)
 {
 	rotate(b);
-	write(1 ,"ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
-void rra(stack **a)
+void	rr(stack **a, stack **b)
+{
+	rotate(b);
+	rotate(a);
+	write(1, "rr\n", 3);
+}
+
+void	rra(stack **a)
 {
 	reverse_rotate(a);
-	write(1 ,"rra\n", 3);
+	write(1, "rra\n", 4);
 }
 
-void rrb(stack **b)
+void	rrb(stack **b)
 {
 	reverse_rotate(b);
-	write(1 ,"ra\n", 3);
+	write(1, "ra\n", 3);
+}
+
+void	rrr(stack **a, stack **b)
+{
+	reverse_rotate(b);
+	reverse_rotate(a);
+	write(1, "rrr\n", 4);
 }
