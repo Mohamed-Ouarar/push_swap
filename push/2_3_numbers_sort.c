@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:51:05 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 13:44:45 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/12 06:17:45 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	three_sort(stack **node)
 {
-	int	max_number;
+	stack	*big_node;
 
-	max_number = max_value(node);
-	if ((*node)->value == max_number)
+	big_node = max_value(*node);
+	if (*node == big_node)
 		ra(node);
-	else if ((*node)->next->value == max_number)
+	else if ((*node)->next == big_node)
 		rra(node);
 	if ((*node)->value > (*node)->next->value)
 		sa(node);
@@ -36,8 +36,8 @@ void	move_nodes(stack **a, stack **b)
 	else if (!(cheaapest_node->aboce_median) && \
 		!(cheaapest_node->tarhet_node->aboce_median))
 		reverse_rotate_both(a, b, cheaapest_node);
-	finish_rotation(a, cheaapest_node->tarhet_node, 'a');
 	finish_rotation(b, cheaapest_node, 'b');
+	finish_rotation(a, cheaapest_node->tarhet_node, 'a');
 	pa(a, b);
 }
 
@@ -94,7 +94,7 @@ void	push_swap(stack **a, stack **b)
 	}
 	set_index(*a);
 	smallest = find_smallest(*a);
-	finish_rotation(a, smallest,'a');
+	// finish_rotation(a, smallest,'a');
 	if (smallest->aboce_median)
 		while (*a != smallest)
 			ra(a);

@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:44:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 12:16:04 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/12 05:21:23 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,24 @@ int	stack_len(stack *node)
 	return (count);
 }
 
-int	max_value(stack **node)
+stack	*max_value(stack *node)
 {
-	stack	*tmp;
+	stack	*big_node;
 	int		max;
 
+	if (!node)
+		return (NULL);
 	max = INT_MIN;
-	tmp = *node;
-	while (tmp->next)
+	while (node)
 	{
-		if (max < tmp->value)
-			max = tmp->value;
-		tmp = tmp->next;
+		if (max < node->value)
+		{
+			max = node->value;
+			big_node = node;
+		}
+		node = node->next;
 	}
-	return (max);
+	return (big_node);
 }
 
 stack	*find_smallest(stack *node)

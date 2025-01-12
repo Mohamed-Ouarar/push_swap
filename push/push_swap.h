@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 09:29:09 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/12 05:23:17 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	finish_rotation(stack **node, stack *top_node , char stack);
 void	push_swap(stack **a, stack **b);
 stack	*ft_lstlast(stack *lst);
 int		stack_len(stack *node);
-int		max_value(stack **node);
+stack	*max_value(stack *node);
 stack	*find_smallest(stack *node);
 stack	*return_cheapest(stack *node);
 void	set_price(stack *a, stack *b);

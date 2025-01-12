@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 11:44:04 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 13:01:48 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/12 05:40:28 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	push(stack **dst, stack **src)
 {
 	stack	*node_to_push;
 
+	if (*src == NULL)
+		return ;
 	node_to_push = *src;
 	*src = (*src)->next;
 	if (*src)

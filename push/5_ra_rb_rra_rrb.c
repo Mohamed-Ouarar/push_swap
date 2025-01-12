@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:01:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 09:13:17 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/12 06:27:38 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ra(stack **a)
 void	rb(stack **b)
 {
 	rotate(b);
-	write(1, "ra\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	rr(stack **a, stack **b)
@@ -40,7 +40,7 @@ void	rra(stack **a)
 void	rrb(stack **b)
 {
 	reverse_rotate(b);
-	write(1, "ra\n", 3);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(stack **a, stack **b)
