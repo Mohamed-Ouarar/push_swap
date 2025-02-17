@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:44:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/12 05:21:23 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/01/16 10:24:20 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ stack	*find_smallest(stack *node)
 stack	*return_cheapest(stack *node)
 {
 	if (NULL == node)
-        return (NULL);
+		return (NULL);
 	while (node)
 	{
 		if (node->cheapest)

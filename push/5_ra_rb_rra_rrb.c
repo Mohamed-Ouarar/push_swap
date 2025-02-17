@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:01:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/12 06:27:38 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/14 09:30:02 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,4 @@ void	rrb(stack **b)
 {
 	reverse_rotate(b);
 	write(1, "rrb\n", 4);
-}
-
-void	rrr(stack **a, stack **b)
-{
-	reverse_rotate(b);
-	reverse_rotate(a);
-	write(1, "rrr\n", 4);
 }

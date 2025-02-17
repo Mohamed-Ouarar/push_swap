@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 11:44:04 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/12 05:40:28 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/17 16:30:41 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	push(stack **dst, stack **src)
 	stack	*node_to_push;
 
 	if (*src == NULL)
-		return ;
+	{
+		free_stak(dst);
+		exit(1);
+	}
 	node_to_push = *src;
 	*src = (*src)->next;
 	if (*src)
@@ -39,11 +42,11 @@ void	push(stack **dst, stack **src)
 void	rotate(stack **node)
 {
 	stack	*last_node;
-	int	len;
+	int		len;
 
 	len = stack_len(*node);
-	if (NULL == *node || NULL == node || 1 == len)
-        return ;
+	if (1 == len)
+		return ;
 	last_node = ft_lstlast(*node);
 	last_node->next = *node;
 	*node = (*node)->next;
@@ -58,7 +61,7 @@ void	reverse_rotate(stack **node)
 	int		len;
 
 	len = stack_len(*node);
-	if (NULL == *node || NULL == node || 1 == len)
+	if (1 == len)
 		return ;
 	last = ft_lstlast(*node);
 	last->past->next = NULL;

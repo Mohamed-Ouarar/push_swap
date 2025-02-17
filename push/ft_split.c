@@ -6,34 +6,11 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 16:54:19 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 09:21:01 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/14 09:32:01 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static	int	count_word(char const *str, char latter)
-{
-	int	i;
-	int	words;
-	int	inword;
-
-	i = 0;
-	words = 0;
-	inword = 0;
-	while (str[i])
-	{
-		if (!inword && str[i] != latter)
-		{
-			inword = 1;
-			words++;
-		}
-		if (inword && str[i] == latter)
-			inword = 0;
-		i++;
-	}
-	return (words);
-}
 
 static	char	**free_contet(char **string, int count)
 {
@@ -126,14 +103,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	*(ptr + i) = '\0';
 	return (ptr);
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
 }

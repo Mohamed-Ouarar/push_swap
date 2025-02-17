@@ -6,24 +6,11 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 14:51:05 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/12 06:17:45 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/17 15:38:59 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	three_sort(stack **node)
-{
-	stack	*big_node;
-
-	big_node = max_value(*node);
-	if (*node == big_node)
-		ra(node);
-	else if ((*node)->next == big_node)
-		rra(node);
-	if ((*node)->value > (*node)->next->value)
-		sa(node);
-}
 
 void	move_nodes(stack **a, stack **b)
 {
@@ -82,10 +69,11 @@ void	push_swap(stack **a, stack **b)
 {
 	stack	*smallest;
 	int		len_a;
+	int		average;
 
+	average = average_value(*a);
 	len_a = stack_len(*a);
-	while (len_a-- > 3)
-		pb(a, b);
+	first_step(average, a, b, len_a);
 	three_sort(a);
 	while (*b)
 	{
@@ -94,7 +82,6 @@ void	push_swap(stack **a, stack **b)
 	}
 	set_index(*a);
 	smallest = find_smallest(*a);
-	// finish_rotation(a, smallest,'a');
 	if (smallest->aboce_median)
 		while (*a != smallest)
 			ra(a);
