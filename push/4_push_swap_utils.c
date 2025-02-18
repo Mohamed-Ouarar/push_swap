@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 14:18:30 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 09:11:41 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/18 10:31:32 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void	set_cheapest(stack *node)
 	stack	*cheapest;
 	long	max;
 
-	if (!node)
-		return ;
 	max = LONG_MAX;
 	while (node)
 	{

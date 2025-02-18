@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 13:44:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/16 10:24:20 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/18 10:32:32 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ stack	*max_value(stack *node)
 	stack	*big_node;
 	int		max;
 
-	if (!node)
-		return (NULL);
 	max = INT_MIN;
 	while (node)
 	{
@@ -61,8 +59,6 @@ stack	*find_smallest(stack *node)
 	stack	*smallest;
 	long	max;
 
-	if (!node)
-		return (NULL);
 	max = LONG_MAX;
 	while (node)
 	{
@@ -78,8 +74,6 @@ stack	*find_smallest(stack *node)
 
 stack	*return_cheapest(stack *node)
 {
-	if (NULL == node)
-		return (NULL);
 	while (node)
 	{
 		if (node->cheapest)

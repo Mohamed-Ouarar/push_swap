@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   7_Push_Rotate_Swap_ReverseRotate.c                 :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 11:44:04 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 10:25:36 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/18 17:39:05 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/18 18:15:23 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_bonus.h"
+
+void	rrr(stack **a, stack **b)
+{
+	rrb(b);
+	rra(a);
+}
 
 void	push(stack **dst, stack **src)
 {

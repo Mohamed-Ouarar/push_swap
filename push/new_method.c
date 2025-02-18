@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:37:13 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/17 16:33:33 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/18 10:14:45 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	average_value(stack *head)
 	return (average);
 }
 
-int	empty_str(char *av, stack **a)
+void	empty_str(char *av, stack **a)
 {
 	int		i;
 	char	**tmp;
@@ -84,7 +84,8 @@ int	empty_str(char *av, stack **a)
 	if (*av == '\0')
 	{
 		write(2, "Error\n", 7);
-		return (0);
+		free_stak(a);
+		exit(1);
 	}
 	tmp = ft_split(av, ' ');
 	if (!tmp)
@@ -96,5 +97,4 @@ int	empty_str(char *av, stack **a)
 	while (tmp[i])
 		free(tmp[i++]);
 	free(tmp);
-	return (1);
 }

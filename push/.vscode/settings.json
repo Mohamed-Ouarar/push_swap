@@ -19,6 +19,7 @@
 		"type_traits": "c",
 		"vector": "c",
 		"ostream": "c",
-		"stdlib.h": "c"
+		"stdlib.h": "c",
+		"stdio.h": "c"
 	}
 }

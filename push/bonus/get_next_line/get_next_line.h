@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   5_ra_rb_rra_rrb.c                                  :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 14:01:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 10:25:21 by mouarar          ###   ########.fr       */
+/*   Created: 2024/11/04 11:13:02 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/18 17:54:57 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ra(stack **a)
-{
-	rotate(a);
-	write(1, "ra\n", 3);
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include "../push_swap_bonus.h"
 
-void	rb(stack **b)
-{
-	rotate(b);
-	write(1, "rb\n", 3);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10
 
-void	rr(stack **a, stack **b)
-{
-	rotate(b);
-	rotate(a);
-	write(1, "rr\n", 3);
-}
+# endif
 
-void	rra(stack **a)
-{
-	reverse_rotate(a);
-	write(1, "rra\n", 4);
-}
+char	*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-void	rrb(stack **b)
-{
-	reverse_rotate(b);
-	write(1, "rrb\n", 4);
-}
+#endif

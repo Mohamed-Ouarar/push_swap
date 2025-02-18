@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_push_swap.c                                      :+:      :+:    :+:   */
+/*   fill_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 09:02:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 11:53:21 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/18 17:58:01 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/18 18:13:01 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap_bonus.h"
 
-void	free_stak(stack **head)
+void	empty_str(char *av, stack **a)
 {
-	stack	*tmp;
+	int		i;
+	char	**tmp;
 
-	while (*head)
+	i = 0;
+	if (*av == '\0')
 	{
-		tmp = (*head)->next;
-		free(*head);
-		*head = tmp;
+		write(2, "Error\n", 7);
+		free_stack(a);
+		exit(1);
 	}
+	tmp = ft_split(av, ' ');
+	if (!tmp)
+	{
+		free_stack(a);
+		exit(1);
+	}
+	stack_fill(a, tmp);
+	while (tmp[i])
+		free(tmp[i++]);
+	free(tmp);
 }
 
 int	repet_value(stack *a, int value)
@@ -47,18 +59,18 @@ void	stack_fill(stack **a, char **av)
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
 			write(2, "Error\n", 6);
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		if (repet_value(*a, (int)nbr))
 		{
 			write(2, "Error\n", 6);
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		if (!append_value(a, (int)nbr))
 		{
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		av++;
@@ -77,7 +89,6 @@ int	append_value(stack **stak, int value)
 		return (0);
 	node->next = NULL;
 	node->value = value;
-	node->cheapest = 0;
 	if (*stak == NULL)
 	{
 		node->past = NULL;
@@ -90,33 +101,4 @@ int	append_value(stack **stak, int value)
 		last_node->next = node;
 	}
 	return (1);
-}
-// void f() {system("leaks push_swap");}
-int	main(int ac, char **av)
-{
-	// atexit(f);
-	stack	*a;
-	stack	*b;
-
-	a = NULL;
-	b = NULL;
-	if (ac == 1)
-		return (1);
-	av += 1;
-	while (*av)
-	{
-		empty_str(*av, &a);
-		av++;
-	}
-	if (!stack_sorted(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			three_sort(&a);
-		else
-			push_swap(&a, &b);
-	}
-	free_stak(&a);
-	return (0);
 }
