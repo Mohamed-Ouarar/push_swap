@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:23 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:22:24 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:49:15 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-stack	*ft_lstlast(stack *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,7 +21,7 @@ stack	*ft_lstlast(stack *lst)
 	return (lst);
 }
 
-int	stack_len(stack *node)
+int	stack_len(t_stack *node)
 {
 	int	count;
 
@@ -36,9 +36,9 @@ int	stack_len(stack *node)
 	return (count);
 }
 
-stack	*max_value(stack *node)
+t_stack	*max_value(t_stack *node)
 {
-	stack	*big_node;
+	t_stack	*big_node;
 	int		max;
 
 	max = INT_MIN;
@@ -54,9 +54,9 @@ stack	*max_value(stack *node)
 	return (big_node);
 }
 
-stack	*find_smallest(stack *node)
+t_stack	*find_smallest(t_stack *node)
 {
-	stack	*smallest;
+	t_stack	*smallest;
 	long	max;
 
 	max = LONG_MAX;
@@ -72,7 +72,7 @@ stack	*find_smallest(stack *node)
 	return (smallest);
 }
 
-stack	*return_cheapest(stack *node)
+t_stack	*return_cheapest(t_stack *node)
 {
 	while (node)
 	{

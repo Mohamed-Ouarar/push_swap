@@ -6,15 +6,15 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:30:37 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:30:38 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:47:38 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stak(stack **head)
+void	free_stack(t_stack **head)
 {
-	stack	*tmp;
+	t_stack	*tmp;
 
 	while (*head)
 	{
@@ -24,7 +24,7 @@ void	free_stak(stack **head)
 	}
 }
 
-int	repet_value(stack *a, int value)
+int	repet_value(t_stack *a, int value)
 {
 	if (!a)
 		return (0);
@@ -37,7 +37,7 @@ int	repet_value(stack *a, int value)
 	return (0);
 }
 
-void	stack_fill(stack **a, char **av)
+void	stack_fill(t_stack **a, char **av)
 {
 	long	nbr;
 
@@ -47,45 +47,45 @@ void	stack_fill(stack **a, char **av)
 		if (nbr < INT_MIN || nbr > INT_MAX)
 		{
 			write(2, "Error\n", 6);
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		if (repet_value(*a, (int)nbr))
 		{
 			write(2, "Error\n", 6);
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		if (!append_value(a, (int)nbr))
 		{
-			free_stak(a);
+			free_stack(a);
 			exit(1);
 		}
 		av++;
 	}
 }
 
-int	append_value(stack **stak, int value)
+int	append_value(t_stack **stack, int value)
 {
-	stack	*node;
-	stack	*last_node;
+	t_stack	*node;
+	t_stack	*last_node;
 
-	if (!stak)
+	if (!stack)
 		return (0);
-	node = malloc(sizeof(stack));
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (0);
 	node->next = NULL;
 	node->value = value;
 	node->cheapest = 0;
-	if (*stak == NULL)
+	if (*stack == NULL)
 	{
 		node->past = NULL;
-		*stak = node;
+		*stack = node;
 	}
 	else
 	{
-		last_node = ft_lstlast(*stak);
+		last_node = ft_lstlast(*stack);
 		node->past = last_node;
 		last_node->next = node;
 	}
@@ -94,8 +94,8 @@ int	append_value(stack **stak, int value)
 
 int	main(int ac, char **av)
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
@@ -116,6 +116,6 @@ int	main(int ac, char **av)
 		else
 			push_swap(&a, &b);
 	}
-	free_stak(&a);
+	free_stack(&a);
 	return (0);
 }

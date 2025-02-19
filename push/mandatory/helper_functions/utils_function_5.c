@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:43 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:22:44 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:49:56 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ long	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-void	first_step(int average, stack **a, stack **b, int lenth)
+void	first_step(int average, t_stack **a, t_stack **b, int lenth)
 {
 	while (lenth-- > 3)
 	{
@@ -79,7 +79,7 @@ static void	sort_function(int size, int *array)
 	}
 }
 
-int	average_value(stack *head)
+int	average_value(t_stack *head)
 {
 	int	*array;
 	int	average;
@@ -89,7 +89,7 @@ int	average_value(stack *head)
 	array = malloc(sizeof(int) * stack_len(head));
 	if (!array)
 	{
-		free_stak(&head);
+		free_stack(&head);
 		exit(1);
 	}
 	while (head)
@@ -104,7 +104,7 @@ int	average_value(stack *head)
 	return (average);
 }
 
-void	empty_str(char *av, stack **a)
+void	empty_str(char *av, t_stack **a)
 {
 	int		i;
 	char	**tmp;
@@ -113,13 +113,13 @@ void	empty_str(char *av, stack **a)
 	if (*av == '\0')
 	{
 		write(2, "Error\n", 7);
-		free_stak(a);
+		free_stack(a);
 		exit(1);
 	}
 	tmp = ft_split(av, ' ');
 	if (!tmp)
 	{
-		free_stak(a);
+		free_stack(a);
 		exit(1);
 	}
 	stack_fill(a, tmp);

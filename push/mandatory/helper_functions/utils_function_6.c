@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:56 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:26:41 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:50:04 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-bool	stack_sorted(stack *node)
+bool	stack_sorted(t_stack *node)
 {
 	if (!node)
 		return (1);
@@ -25,9 +25,9 @@ bool	stack_sorted(stack *node)
 	return (true);
 }
 
-void	three_sort(stack **node)
+void	three_sort(t_stack **node)
 {
-	stack	*big_node;
+	t_stack	*big_node;
 
 	big_node = max_value(*node);
 	if (*node == big_node)

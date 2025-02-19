@@ -6,15 +6,15 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:13 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:22:15 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:48:50 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	move_nodes(stack **a, stack **b)
+void	move_nodes(t_stack **a, t_stack **b)
 {
-	stack	*cheaapest_node;
+	t_stack	*cheaapest_node;
 
 	cheaapest_node = return_cheapest(*b);
 	if (cheaapest_node->aboce_median && \
@@ -28,7 +28,7 @@ void	move_nodes(stack **a, stack **b)
 	pa(a, b);
 }
 
-void	rotate_both(stack **a, stack **b, stack *cheapest)
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->tarhet_node && *b != cheapest)
 		rr(a, b);
@@ -36,7 +36,7 @@ void	rotate_both(stack **a, stack **b, stack *cheapest)
 	set_index(*b);
 }
 
-void	reverse_rotate_both(stack **a, stack **b, stack *cheapest)
+void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*a != cheapest->tarhet_node && *b != cheapest)
 		rrr(a, b);
@@ -44,7 +44,7 @@ void	reverse_rotate_both(stack **a, stack **b, stack *cheapest)
 	set_index(*b);
 }
 
-void	finish_rotation(stack **node, stack *top_node, char stack)
+void	finish_rotation(t_stack **node, t_stack *top_node, char stack)
 {
 	while (*node != top_node)
 	{
@@ -65,9 +65,9 @@ void	finish_rotation(stack **node, stack *top_node, char stack)
 	}
 }
 
-void	push_swap(stack **a, stack **b)
+void	push_swap(t_stack **a, t_stack **b)
 {
-	stack	*smallest;
+	t_stack	*smallest;
 	int		len_a;
 	int		average;
 

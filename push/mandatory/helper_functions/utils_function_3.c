@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:22:31 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 13:49:37 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	set_price(stack *a, stack *b)
+void	set_price(t_stack *a, t_stack *b)
 {
 	int	a_len;
 	int	b_len;
@@ -32,9 +32,9 @@ void	set_price(stack *a, stack *b)
 	}
 }
 
-void	set_cheapest(stack *node)
+void	set_cheapest(t_stack *node)
 {
-	stack	*cheapest;
+	t_stack	*cheapest;
 	long	max;
 
 	max = LONG_MAX;
@@ -50,7 +50,7 @@ void	set_cheapest(stack *node)
 	cheapest->cheapest = true;
 }
 
-void	set_index(stack *node)
+void	set_index(t_stack *node)
 {
 	int	i;
 	int	mid;
@@ -69,10 +69,10 @@ void	set_index(stack *node)
 	}
 }
 
-void	set_target_node(stack *a, stack *b)
+void	set_target_node(t_stack *a, t_stack *b)
 {
-	stack	*target_node;
-	stack	*current_a;
+	t_stack	*target_node;
+	t_stack	*current_a;
 	long	best_match_value;
 
 	while (b)
@@ -97,7 +97,7 @@ void	set_target_node(stack *a, stack *b)
 	}
 }
 
-void	init_nodes(stack *a, stack *b)
+void	init_nodes(t_stack *a, t_stack *b)
 {
 	set_index(a);
 	set_index(b);
