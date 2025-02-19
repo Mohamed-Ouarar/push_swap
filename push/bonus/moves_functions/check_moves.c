@@ -6,26 +6,29 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:08:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 19:38:20 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:53:43 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-int check_moves(char *str)
+int	check_moves(char *str)
 {
-	if (ft_strcmp(str, "sa\n") || ft_strcmp(str, "sb\n") || ft_strcmp(str, "ss\n"))
+	if (ft_strcmp(str, "sa\n") || ft_strcmp(str, "sb\n")
+		|| ft_strcmp(str, "ss\n"))
 		return (1);
 	else if (ft_strcmp(str, "pa\n") || ft_strcmp(str, "pb\n"))
 		return (1);
-	else if (ft_strcmp(str, "ra\n") || ft_strcmp(str ,"rb\n") || ft_strcmp(str, "rr\n"))
+	else if (ft_strcmp(str, "ra\n") || ft_strcmp(str, "rb\n")
+		|| ft_strcmp(str, "rr\n"))
 		return (1);
-	else if (ft_strcmp(str, "rra\n") || ft_strcmp(str, "rrb\n") || ft_strcmp(str, "rrr\n"))
+	else if (ft_strcmp(str, "rra\n") || ft_strcmp(str, "rrb\n")
+		|| ft_strcmp(str, "rrr\n"))
 		return (1);
 	return (0);
 }
 
-void applay_moves(char *str, stack **a, stack **b)
+void	applay_moves(char *str, t_stack **a, t_stack **b)
 {
 	if (ft_strcmp(str, "sa"))
 		sa(a);
@@ -51,16 +54,16 @@ void applay_moves(char *str, stack **a, stack **b)
 		rrr(a, b);
 }
 
-char *read_input(stack **a)
+char	*read_input(t_stack **a)
 {
 	char	*str;
 	char	*tmp;
-	
+
 	while (1)
 	{
 		tmp = get_next_line(0);
 		if (!tmp)
-			break;
+			break ;
 		if (!check_moves(tmp))
 		{
 			free(tmp);
@@ -68,7 +71,7 @@ char *read_input(stack **a)
 				free(str);
 			free_stack(a);
 			write(2, "Error\n", 6);
-			exit(1);	
+			exit(1);
 		}
 		str = ft_strjoin_kakarot(str, tmp);
 		free(tmp);

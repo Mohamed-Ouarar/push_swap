@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:05:10 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:23:25 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:51:47 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-stack	*ft_lstlast(stack *lst)
+t_stack	*ft_lstlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,7 +21,7 @@ stack	*ft_lstlast(stack *lst)
 	return (lst);
 }
 
-bool	stack_sorted(stack *node)
+bool	stack_sorted(t_stack *node)
 {
 	if (!node)
 		return (1);
@@ -67,7 +67,7 @@ int	count_word(char const *str, char latter)
 	return (words);
 }
 
-void is_sorted(stack *a, int a_lenth)
+void	is_sorted(t_stack *a, int a_lenth)
 {
 	if (stack_sorted(a) && (stack_len(a) == a_lenth))
 		write(1, "OK\n", 3);

@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   6_pa_pb_sa_sb.c                                    :+:      :+:    :+:   */
+/*   ra_rb_rr_rra_rrb.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/05 14:02:56 by mouarar           #+#    #+#             */
-/*   Updated: 2025/01/11 09:14:07 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/19 11:25:23 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/19 11:25:24 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	pa(stack **a, stack **b)
+void	ra(stack **a)
 {
-	push(a, b);
-	write(1, "pa\n", 3);
+	rotate(a);
+	write(1, "ra\n", 3);
 }
 
-void	pb(stack **a, stack **b)
+void	rb(stack **b)
 {
-	push(b, a);
-	write(1, "pb\n", 3);
+	rotate(b);
+	write(1, "rb\n", 3);
 }
 
-void	sa(stack **node)
+void	rr(stack **a, stack **b)
 {
-	write(1, "sa\n", 3);
-	swap(node);
+	rotate(b);
+	rotate(a);
+	write(1, "rr\n", 3);
 }
 
-void	sb(stack **node)
+void	rra(stack **a)
 {
-	write(1, "sb\n", 3);
-	swap(node);
+	reverse_rotate(a);
+	write(1, "rra\n", 4);
 }
 
-void	ss(stack **node)
+void	rrb(stack **b)
 {
-	write(1, "ss\n", 3);
-	swap(node);
+	reverse_rotate(b);
+	write(1, "rrb\n", 4);
 }

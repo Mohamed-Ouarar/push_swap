@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:58:01 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:13:01 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:49:52 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-void	empty_str(char *av, stack **a)
+void	empty_str(char *av, t_stack **a)
 {
 	int		i;
 	char	**tmp;
@@ -36,7 +36,7 @@ void	empty_str(char *av, stack **a)
 	free(tmp);
 }
 
-int	repet_value(stack *a, int value)
+int	repet_value(t_stack *a, int value)
 {
 	if (!a)
 		return (0);
@@ -49,7 +49,7 @@ int	repet_value(stack *a, int value)
 	return (0);
 }
 
-void	stack_fill(stack **a, char **av)
+void	stack_fill(t_stack **a, char **av)
 {
 	long	nbr;
 
@@ -77,14 +77,14 @@ void	stack_fill(stack **a, char **av)
 	}
 }
 
-int	append_value(stack **stak, int value)
+int	append_value(t_stack **stak, int value)
 {
-	stack	*node;
-	stack	*last_node;
+	t_stack	*node;
+	t_stack	*last_node;
 
 	if (!stak)
 		return (0);
-	node = malloc(sizeof(stack));
+	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (0);
 	node->next = NULL;

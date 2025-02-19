@@ -6,40 +6,40 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:58:29 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:04:18 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:54:06 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-void	ra(stack **a)
+void	ra(t_stack **a)
 {
 	if (!*a)
-		return;
+		return ;
 	rotate(a);
 }
 
-void	rb(stack **b)
+void	rb(t_stack **b)
 {
-	if (!*b)	
+	if (!*b)
 		return ;
 	rotate(b);
 }
 
-void	rr(stack **a, stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
 	rb(b);
 	ra(a);
 }
 
-void	rra(stack **a)
+void	rra(t_stack **a)
 {
 	if (!*a)
 		return ;
 	reverse_rotate(a);
 }
 
-void	rrb(stack **b)
+void	rrb(t_stack **b)
 {
 	if (!*b)
 		return ;

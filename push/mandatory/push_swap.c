@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_push_swap.c                                      :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/11 09:02:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 11:53:21 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/19 11:30:37 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/19 11:30:38 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,9 @@ int	append_value(stack **stak, int value)
 	}
 	return (1);
 }
-// void f() {system("leaks push_swap");}
+
 int	main(int ac, char **av)
 {
-	// atexit(f);
 	stack	*a;
 	stack	*b;
 

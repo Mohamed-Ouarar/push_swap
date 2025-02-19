@@ -6,21 +6,21 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:39:05 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:15:23 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:53:53 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-void	rrr(stack **a, stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rrb(b);
 	rra(a);
 }
 
-void	push(stack **dst, stack **src)
+void	push(t_stack **dst, t_stack **src)
 {
-	stack	*node_to_push;
+	t_stack	*node_to_push;
 
 	node_to_push = *src;
 	*src = (*src)->next;
@@ -40,9 +40,9 @@ void	push(stack **dst, stack **src)
 	}
 }
 
-void	rotate(stack **node)
+void	rotate(t_stack **node)
 {
-	stack	*last_node;
+	t_stack	*last_node;
 	int		len;
 
 	len = stack_len(*node);
@@ -56,13 +56,13 @@ void	rotate(stack **node)
 	last_node->next->next = NULL;
 }
 
-void	reverse_rotate(stack **node)
+void	reverse_rotate(t_stack **node)
 {
-	stack	*last;
+	t_stack	*last;
 	int		len;
 
 	len = stack_len(*node);
-	if (1 == len)
+	if (len < 2)
 		return ;
 	last = ft_lstlast(*node);
 	last->past->next = NULL;
@@ -72,8 +72,13 @@ void	reverse_rotate(stack **node)
 	last->next->past = last;
 }
 
-void	swap(stack **node)
+void	swap(t_stack **node)
 {
+	int	len;
+
+	len = stack_len(*node);
+	if (len < 2)
+		return ;
 	(*node) = (*node)->next;
 	(*node)->past->past = *node;
 	(*node)->past->next = (*node)->next;

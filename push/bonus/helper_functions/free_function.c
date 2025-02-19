@@ -6,15 +6,15 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:12:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:19:17 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:51:39 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-void	free_stack(stack **head)
+void	free_stack(t_stack **head)
 {
-	stack	*tmp;
+	t_stack	*tmp;
 
 	while (*head)
 	{
@@ -24,9 +24,11 @@ void	free_stack(stack **head)
 	}
 }
 
-void free_malloc(char **str)
+void	free_malloc(char **str)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (str[i])
 		free(str[i++]);
 	free(str);
@@ -43,7 +45,7 @@ char	**free_contet(char **string, int count)
 	return (NULL);
 }
 
-void free_stacks(stack **a, stack **b)
+void	free_stacks(t_stack **a, t_stack **b)
 {
 	free_stack(a);
 	if (*b)

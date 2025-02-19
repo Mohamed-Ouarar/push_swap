@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 10:16:07 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 11:28:28 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	pa(stack **a, stack **b);
 void	pb(stack **a, stack **b);
 void	sa(stack **node);
 void	sb(stack **node);
-void	ss(stack **node);
+void	ss(stack **a, stack **b);
 void	push(stack **dst, stack **src);
 void	rotate(stack **node);
 void	reverse_rotate(stack **node);

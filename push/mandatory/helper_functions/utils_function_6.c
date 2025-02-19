@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_functions.c                                  :+:      :+:    :+:   */
+/*   utils_function_6.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 09:28:22 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/14 09:33:46 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/19 11:22:56 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/19 11:26:41 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 bool	stack_sorted(stack *node)
 {
@@ -36,13 +36,6 @@ void	three_sort(stack **node)
 		rra(node);
 	if ((*node)->value > (*node)->next->value)
 		sa(node);
-}
-
-void	rrr(stack **a, stack **b)
-{
-	reverse_rotate(b);
-	reverse_rotate(a);
-	write(1, "rrr\n", 4);
 }
 
 size_t	ft_strlen(const char *s)

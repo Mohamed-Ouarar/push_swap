@@ -6,13 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 18:02:51 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 18:14:13 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/19 10:49:05 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-int	stack_len(stack *node)
+int	stack_len(t_stack *node)
 {
 	int	count;
 

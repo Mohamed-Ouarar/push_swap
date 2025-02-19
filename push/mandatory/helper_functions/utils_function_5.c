@@ -1,16 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_method.c                                       :+:      :+:    :+:   */
+/*   utils_function_5.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 12:37:13 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/18 10:14:45 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/19 11:22:43 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/19 11:22:44 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+long	ft_atoi(const char *str)
+{
+	int				i;
+	int				sign;
+	long			result;
+
+	sign = 1;
+	i = 0;
+	result = 0;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+		if (!str[i])
+			return (LONG_MAX);
+	}
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+	{
+		result = result * 10 + str[i] - 48;
+		i++;
+		if (result > INT_MAX)
+			return (LONG_MAX);
+	}
+	if (str[i] && (str[i] < '0' || str[i] > '9'))
+		return (LONG_MAX);
+	return (result * sign);
+}
 
 void	first_step(int average, stack **a, stack **b, int lenth)
 {
