@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_stack_a.c                                     :+:      :+:    :+:   */
+/*   fill_stack_a_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 17:58:01 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:49:52 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:09 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:50:52 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	append_value(t_stack **stak, int value)
 	}
 	else
 	{
-		last_node = ft_lstlast(*stak);
+		last_node = ft_listlast(*stak);
 		node->past = last_node;
 		last_node->next = node;
 	}

@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:51:02 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:50:50 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	finish_rotation(t_stack **node, t_stack *top_node, char stack);
 void	push_swap(t_stack **a, t_stack **b);
-t_stack	*ft_lstlast(t_stack *lst);
-int		stack_len(t_stack *node);
+t_stack	*ft_listlast(t_stack *lst);
+int		stack_lenght(t_stack *node);
 
 void	ra(t_stack **a);
 void	rb(t_stack **b);
@@ -69,9 +69,10 @@ void	free_malloc(char **str);
 char	**free_contet(char **string, int count);
 char	*read_input(t_stack **a);
 int		ft_strcmp(char *s1, char *s2);
-char	*ft_strjoin_kakarot(char const *s1, char const *s2);
+char	*add_line_to_line(char const *s1, char const *s2);
 void	applay_moves(char *str, t_stack **a, t_stack **b);
 void	free_stacks(t_stack **a, t_stack **b);
 void	is_sorted(t_stack *a, int a_lenth);
+void	check_argement(char **av, t_stack **a);
 
 #endif

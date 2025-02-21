@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_moves.c                                      :+:      :+:    :+:   */
+/*   check_moves_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 18:08:24 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:53:43 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:44 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:17:45 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*read_input(t_stack **a)
 			write(2, "Error\n", 6);
 			exit(1);
 		}
-		str = ft_strjoin_kakarot(str, tmp);
+		str = add_line_to_line(str, tmp);
 		free(tmp);
 	}
 	return (str);

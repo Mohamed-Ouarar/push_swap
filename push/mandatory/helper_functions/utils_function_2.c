@@ -6,22 +6,22 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:23 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:49:15 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:51:58 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*ft_listlast(t_stack *list)
 {
-	if (!lst)
+	if (!list)
 		return (NULL);
-	while (lst ->next != NULL)
-		lst = lst -> next;
-	return (lst);
+	while (list ->next != NULL)
+		list = list -> next;
+	return (list);
 }
 
-int	stack_len(t_stack *node)
+int	stack_lenght(t_stack *node)
 {
 	int	count;
 

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_functions_1.c                                :+:      :+:    :+:   */
+/*   utils_functions_1_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 18:02:51 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:49:05 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:25 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:17:26 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-int	stack_len(t_stack *node)
+int	stack_lenght(t_stack *node)
 {
 	int	count;
 
@@ -25,6 +25,15 @@ int	stack_len(t_stack *node)
 		node = node->next;
 	}
 	return (count);
+}
+
+void	check_argement(char **av, t_stack **a)
+{
+	while (*av)
+	{
+		empty_str(*av, a);
+		av++;
+	}
 }
 
 long	ft_atoi(const char *str)
@@ -56,7 +65,7 @@ long	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-char	*ft_strjoin_kakarot(char const *s1, char const *s2)
+char	*add_line_to_line(char const *s1, char const *s2)
 {
 	char	*ptr;
 	int		i;

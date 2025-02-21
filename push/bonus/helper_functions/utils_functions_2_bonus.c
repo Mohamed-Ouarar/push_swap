@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_functions_2.c                                :+:      :+:    :+:   */
+/*   utils_functions_2_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 18:02:44 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:33:34 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:30 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:17:31 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	char	**fill(char **str, const char *string, char c)
 {
-	int	len;
+	int	lenght;
 	int	j;
 
 	j = 0;
@@ -24,14 +24,14 @@ static	char	**fill(char **str, const char *string, char c)
 			string++;
 		if (*string && *string != c)
 		{
-			len = 0;
-			while (string[len] && string[len] != c)
-				len++;
-			str[j] = ft_substr(string, 0, len);
+			lenght = 0;
+			while (string[lenght] && string[lenght] != c)
+				lenght++;
+			str[j] = ft_substr(string, 0, lenght);
 			if (!str[j])
 				return (free_contet(str, j));
 			j++;
-			string += len;
+			string += lenght;
 		}
 	}
 	str[j] = NULL;

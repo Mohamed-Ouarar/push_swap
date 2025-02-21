@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:37 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 11:22:38 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:12:01 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	char	**free_contet(char **string, int count)
 
 static	char	**fill(char **str, const char *string, char c)
 {
-	int	len;
+	int	lenght;
 	int	j;
 
 	j = 0;
@@ -35,14 +35,14 @@ static	char	**fill(char **str, const char *string, char c)
 			string++;
 		if (*string && *string != c)
 		{
-			len = 0;
-			while (string[len] && string[len] != c)
-				len++;
-			str[j] = ft_substr(string, 0, len);
+			lenght = 0;
+			while (string[lenght] && string[lenght] != c)
+				lenght++;
+			str[j] = ft_substr(string, 0, lenght);
 			if (!str[j])
 				return (free_contet(str, j));
 			j++;
-			string += len;
+			string += lenght;
 		}
 	}
 	str[j] = NULL;

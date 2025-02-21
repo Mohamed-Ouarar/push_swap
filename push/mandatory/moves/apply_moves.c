@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:24:34 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:47:12 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:51:09 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	push(t_stack **dst, t_stack **src)
 void	rotate(t_stack **node)
 {
 	t_stack	*last_node;
-	int		len;
+	int		lenght;
 
-	len = stack_len(*node);
-	if (1 == len)
+	lenght = stack_lenght(*node);
+	if (1 == lenght)
 		return ;
-	last_node = ft_lstlast(*node);
+	last_node = ft_listlast(*node);
 	last_node->next = *node;
 	*node = (*node)->next;
 	(*node)->past = NULL;
@@ -60,12 +60,12 @@ void	rotate(t_stack **node)
 void	reverse_rotate(t_stack **node)
 {
 	t_stack	*last;
-	int		len;
+	int		lenght;
 
-	len = stack_len(*node);
-	if (1 == len)
+	lenght = stack_lenght(*node);
+	if (1 == lenght)
 		return ;
-	last = ft_lstlast(*node);
+	last = ft_listlast(*node);
 	last->past->next = NULL;
 	last->next = *node;
 	last->past = NULL;

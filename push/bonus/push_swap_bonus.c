@@ -6,20 +6,11 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 11:21:34 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:41:57 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 11:07:05 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-void	check_argement(char **av, t_stack **a)
-{
-	while (*av)
-	{
-		empty_str(*av, a);
-		av++;
-	}
-}
 
 int	main(int ac, char **av)
 {
@@ -35,7 +26,7 @@ int	main(int ac, char **av)
 		return (1);
 	av += 1;
 	check_argement(av, &a);
-	a_lenth = stack_len(a);
+	a_lenth = stack_lenght(a);
 	str = read_input(&a);
 	ptr = ft_split(str, '\n');
 	free(str);

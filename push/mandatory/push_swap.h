@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:46:39 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 10:51:04 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 
 typedef struct list
 {
-	struct list	*tarhet_node;
+	struct list	*target_node;
 	struct list	*past;
 	struct list	*next;
 	int			value;
 	int			index;
 	int			final_index;
 	int			push_price;
-	bool		aboce_median;
+	bool		first_half;
 	bool		cheapest;
 }	t_stack;
 
@@ -41,8 +41,8 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void	finish_rotation(t_stack **node, t_stack *top_node, char stack);
 void	push_swap(t_stack **a, t_stack **b);
-t_stack	*ft_lstlast(t_stack *lst);
-int		stack_len(t_stack *node);
+t_stack	*ft_listlast(t_stack *lst);
+int		stack_lenght(t_stack *node);
 t_stack	*max_value(t_stack *node);
 t_stack	*find_smallest(t_stack *node);
 t_stack	*return_cheapest(t_stack *node);

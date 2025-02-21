@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:43 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:49:56 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:13:29 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	average_value(t_stack *head)
 	int	size;
 
 	size = 0;
-	array = malloc(sizeof(int) * stack_len(head));
+	array = malloc(sizeof(int) * stack_lenght(head));
 	if (!array)
 	{
 		free_stack(&head);
@@ -112,7 +112,7 @@ void	empty_str(char *av, t_stack **a)
 	i = 0;
 	if (*av == '\0')
 	{
-		write(2, "Error\n", 7);
+		write(2, "Error\n", 6);
 		free_stack(a);
 		exit(1);
 	}

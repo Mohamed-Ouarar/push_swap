@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:13 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:48:50 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:13:27 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	move_nodes(t_stack **a, t_stack **b)
 {
-	t_stack	*cheaapest_node;
+	t_stack	*cheapest_node;
 
-	cheaapest_node = return_cheapest(*b);
-	if (cheaapest_node->aboce_median && \
-		cheaapest_node->tarhet_node->aboce_median)
-		rotate_both(a, b, cheaapest_node);
-	else if (!(cheaapest_node->aboce_median) && \
-		!(cheaapest_node->tarhet_node->aboce_median))
-		reverse_rotate_both(a, b, cheaapest_node);
-	finish_rotation(b, cheaapest_node, 'b');
-	finish_rotation(a, cheaapest_node->tarhet_node, 'a');
+	cheapest_node = return_cheapest(*b);
+	if (cheapest_node->first_half && \
+		cheapest_node->target_node->first_half)
+		rotate_both(a, b, cheapest_node);
+	else if (!(cheapest_node->first_half) && \
+		!(cheapest_node->target_node->first_half))
+		reverse_rotate_both(a, b, cheapest_node);
+	finish_rotation(b, cheapest_node, 'b');
+	finish_rotation(a, cheapest_node->target_node, 'a');
 	pa(a, b);
 }
 
 void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-	while (*a != cheapest->tarhet_node && *b != cheapest)
+	while (*a != cheapest->target_node && *b != cheapest)
 		rr(a, b);
 	set_index(*a);
 	set_index(*b);
@@ -38,7 +38,7 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 
 void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-	while (*a != cheapest->tarhet_node && *b != cheapest)
+	while (*a != cheapest->target_node && *b != cheapest)
 		rrr(a, b);
 	set_index(*a);
 	set_index(*b);
@@ -50,14 +50,14 @@ void	finish_rotation(t_stack **node, t_stack *top_node, char stack)
 	{
 		if (stack == 'a')
 		{
-			if (top_node->aboce_median)
+			if (top_node->first_half)
 				ra(node);
 			else
 				rra(node);
 		}
 		if (stack == 'b')
 		{
-			if (top_node->aboce_median)
+			if (top_node->first_half)
 				rb(node);
 			else
 				rrb(node);
@@ -72,7 +72,7 @@ void	push_swap(t_stack **a, t_stack **b)
 	int		average;
 
 	average = average_value(*a);
-	len_a = stack_len(*a);
+	len_a = stack_lenght(*a);
 	first_step(average, a, b, len_a);
 	three_sort(a);
 	while (*b)
@@ -82,7 +82,7 @@ void	push_swap(t_stack **a, t_stack **b)
 	}
 	set_index(*a);
 	smallest = find_smallest(*a);
-	if (smallest->aboce_median)
+	if (smallest->first_half)
 		while (*a != smallest)
 			ra(a);
 	else

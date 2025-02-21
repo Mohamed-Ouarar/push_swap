@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   moves_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 17:39:05 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:53:53 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:51 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:50:57 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	push(t_stack **dst, t_stack **src)
 void	rotate(t_stack **node)
 {
 	t_stack	*last_node;
-	int		len;
+	int		lenght;
 
-	len = stack_len(*node);
-	if (1 == len)
+	lenght = stack_lenght(*node);
+	if (1 == lenght)
 		return ;
-	last_node = ft_lstlast(*node);
+	last_node = ft_listlast(*node);
 	last_node->next = *node;
 	*node = (*node)->next;
 	(*node)->past = NULL;
@@ -59,12 +59,12 @@ void	rotate(t_stack **node)
 void	reverse_rotate(t_stack **node)
 {
 	t_stack	*last;
-	int		len;
+	int		lenght;
 
-	len = stack_len(*node);
-	if (len < 2)
+	lenght = stack_lenght(*node);
+	if (lenght < 2)
 		return ;
-	last = ft_lstlast(*node);
+	last = ft_listlast(*node);
 	last->past->next = NULL;
 	last->next = *node;
 	last->past = NULL;
@@ -74,10 +74,10 @@ void	reverse_rotate(t_stack **node)
 
 void	swap(t_stack **node)
 {
-	int	len;
+	int	lenght;
 
-	len = stack_len(*node);
-	if (len < 2)
+	lenght = stack_lenght(*node);
+	if (lenght < 2)
 		return ;
 	(*node) = (*node)->next;
 	(*node)->past->past = *node;

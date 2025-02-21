@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_functions_3.c                                :+:      :+:    :+:   */
+/*   utils_functions_3_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 18:05:10 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 10:51:47 by mouarar          ###   ########.fr       */
+/*   Created: 2025/02/21 10:17:37 by mouarar           #+#    #+#             */
+/*   Updated: 2025/02/21 10:50:54 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-t_stack	*ft_lstlast(t_stack *lst)
+t_stack	*ft_listlast(t_stack *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -69,7 +69,7 @@ int	count_word(char const *str, char latter)
 
 void	is_sorted(t_stack *a, int a_lenth)
 {
-	if (stack_sorted(a) && (stack_len(a) == a_lenth))
+	if (stack_sorted(a) && (stack_lenght(a) == a_lenth))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

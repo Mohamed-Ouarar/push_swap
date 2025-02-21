@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:56 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:50:04 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/20 10:40:09 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 bool	stack_sorted(t_stack *node)
 {
-	if (!node)
-		return (1);
 	while (node->next)
 	{
 		if (node->value > node->next->value)

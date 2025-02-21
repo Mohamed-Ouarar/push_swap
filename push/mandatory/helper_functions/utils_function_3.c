@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:49:37 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/20 11:32:05 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	set_price(t_stack *a, t_stack *b)
 {
-	int	a_len;
-	int	b_len;
+	int	a_lenght;
+	int	b_lenght;
 
-	a_len = stack_len(a);
-	b_len = stack_len(b);
+	a_lenght = stack_lenght(a);
+	b_lenght = stack_lenght(b);
 	while (b)
 	{
 		b->push_price = b->index;
-		if (!(b->aboce_median))
-			b->push_price = b_len - b->index;
-		if (b->tarhet_node->aboce_median)
-			b->push_price += b->tarhet_node->index;
+		if (!(b->first_half))
+			b->push_price = b_lenght - b->index;
+		if (b->target_node->first_half)
+			b->push_price += b->target_node->index;
 		else
-			b->push_price += a_len - b->tarhet_node->index;
+			b->push_price += a_lenght - b->target_node->index;
 		b = b->next;
 	}
 }
@@ -53,17 +53,17 @@ void	set_cheapest(t_stack *node)
 void	set_index(t_stack *node)
 {
 	int	i;
-	int	mid;
+	int	middle;
 
 	i = 0;
-	mid = stack_len(node) / 2;
+	middle = stack_lenght(node) / 2;
 	while (node)
 	{
 		node->index = i;
-		if (i <= mid)
-			node->aboce_median = true;
+		if (i <= middle)
+			node->first_half = true;
 		else
-			node->aboce_median = false;
+			node->first_half = false;
 		i++;
 		node = node->next;
 	}
@@ -78,7 +78,7 @@ void	set_target_node(t_stack *a, t_stack *b)
 	while (b)
 	{
 		best_match_value = LONG_MAX;
-		current_a = a ;
+		current_a = a;
 		while (current_a)
 		{
 			if (current_a->value > b->value && \
@@ -90,9 +90,9 @@ void	set_target_node(t_stack *a, t_stack *b)
 			current_a = current_a->next;
 		}
 		if (best_match_value == LONG_MAX)
-			b->tarhet_node = find_smallest(a);
+			b->target_node = find_smallest(a);
 		else
-			b->tarhet_node = target_node;
+			b->target_node = target_node;
 		b = b->next;
 	}
 }

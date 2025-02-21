@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:30:37 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/19 13:47:38 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/21 11:07:39 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	append_value(t_stack **stack, int value)
 	}
 	else
 	{
-		last_node = ft_lstlast(*stack);
+		last_node = ft_listlast(*stack);
 		node->past = last_node;
 		last_node->next = node;
 	}
@@ -109,9 +109,9 @@ int	main(int ac, char **av)
 	}
 	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2)
+		if (stack_lenght(a) == 2)
 			sa(&a);
-		else if (stack_len(a) == 3)
+		else if (stack_lenght(a) == 3)
 			three_sort(&a);
 		else
 			push_swap(&a, &b);
