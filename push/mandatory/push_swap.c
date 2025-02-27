@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:30:37 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 11:07:39 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/26 12:42:15 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	stack_fill(t_stack **a, char **av)
 	while (*av)
 	{
 		nbr = ft_atoi(*av);
-		if (nbr < INT_MIN || nbr > INT_MAX)
+		if (nbr > INT_MAX)
 		{
 			write(2, "Error\n", 6);
 			free_stack(a);
@@ -100,7 +100,7 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (ac == 1)
-		return (1);
+		return (0);
 	av += 1;
 	while (*av)
 	{

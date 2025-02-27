@@ -11,14 +11,14 @@ BONUS_OBJS = $(BONUS_SRC:.c=.o)
 NAME = push_swap
 BONUS_NAME = checker
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o : %.c
+%.o : %.c mandatory/push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus : $(BONUS_NAME)

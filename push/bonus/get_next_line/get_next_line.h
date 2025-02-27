@@ -6,15 +6,13 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:13:02 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 10:41:00 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/26 16:25:29 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdlib.h>
-# include <unistd.h>
 # include "../push_swap_bonus.h"
 
 # ifndef BUFFER_SIZE

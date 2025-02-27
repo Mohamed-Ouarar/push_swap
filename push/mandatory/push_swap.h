@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 10:51:04 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/26 16:26:43 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct list
+typedef struct s_stack
 {
-	struct list	*target_node;
-	struct list	*past;
-	struct list	*next;
-	int			value;
-	int			index;
-	int			final_index;
-	int			push_price;
-	bool		first_half;
-	bool		cheapest;
-}	t_stack;
+	struct s_stack	*target_node;
+	struct s_stack	*past;
+	struct s_stack	*next;
+	int				value;
+	int				index;
+	int				push_price;
+	bool			first_half;
+	bool			cheapest;
+}					t_stack;
 
 int		repet_value(t_stack *a, int value);
 void	stack_fill(t_stack **a, char **av);
@@ -73,11 +72,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 void	free_stack(t_stack **head);
-void	ft_print_stack(t_stack *node);
-long	ft_u_atoi(const char *str);
 int		average_value(t_stack *head);
 int		count_word(char const *str, char latter);
 void	first_step(int average, t_stack **a, t_stack **b, int lenth);
 void	empty_str(char *av, t_stack **a);
+int		if_just_spaces(char *str);
 
 #endif

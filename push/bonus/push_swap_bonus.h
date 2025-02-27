@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 09:21:27 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 10:50:50 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/26 16:26:14 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ int		repet_value(t_stack *a, int value);
 void	stack_fill(t_stack **a, char **av);
 int		append_value(t_stack **stak, int value);
 bool	stack_sorted(t_stack *node);
-void	three_sort(t_stack **node);
-void	move_nodes(t_stack **a, t_stack **b);
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
-void	reverse_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
-void	finish_rotation(t_stack **node, t_stack *top_node, char stack);
-void	push_swap(t_stack **a, t_stack **b);
 t_stack	*ft_listlast(t_stack *lst);
 int		stack_lenght(t_stack *node);
 
@@ -74,5 +68,6 @@ void	applay_moves(char *str, t_stack **a, t_stack **b);
 void	free_stacks(t_stack **a, t_stack **b);
 void	is_sorted(t_stack *a, int a_lenth);
 void	check_argement(char **av, t_stack **a);
+int		if_just_spaces(char *str);
 
 #endif

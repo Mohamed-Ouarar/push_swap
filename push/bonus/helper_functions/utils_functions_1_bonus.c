@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 10:17:25 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 10:17:26 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/23 09:43:09 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ long	ft_atoi(const char *str)
 	{
 		result = result * 10 + str[i] - 48;
 		i++;
-		if (result > INT_MAX)
+		if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
 			return (LONG_MAX);
 	}
 	if (str[i] && (str[i] < '0' || str[i] > '9'))

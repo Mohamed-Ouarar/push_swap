@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:43 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/20 11:13:29 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/26 12:33:57 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long	ft_atoi(const char *str)
 {
-	int				i;
-	int				sign;
-	long			result;
+	int		i;
+	int		sign;
+	long	result;
 
 	sign = 1;
 	i = 0;
@@ -33,7 +33,7 @@ long	ft_atoi(const char *str)
 	{
 		result = result * 10 + str[i] - 48;
 		i++;
-		if (result > INT_MAX)
+		if ((result * sign) > INT_MAX || (result * sign) < INT_MIN)
 			return (LONG_MAX);
 	}
 	if (str[i] && (str[i] < '0' || str[i] > '9'))
@@ -81,9 +81,9 @@ static void	sort_function(int size, int *array)
 
 int	average_value(t_stack *head)
 {
-	int	*array;
-	int	average;
-	int	size;
+	int		*array;
+	int		average;
+	int		size;
 
 	size = 0;
 	array = malloc(sizeof(int) * stack_lenght(head));
@@ -110,7 +110,7 @@ void	empty_str(char *av, t_stack **a)
 	char	**tmp;
 
 	i = 0;
-	if (*av == '\0')
+	if (*av == '\0' || if_just_spaces(av))
 	{
 		write(2, "Error\n", 6);
 		free_stack(a);

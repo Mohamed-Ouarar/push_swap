@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 10:17:09 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/21 10:50:52 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/25 14:18:24 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	empty_str(char *av, t_stack **a)
 	char	**tmp;
 
 	i = 0;
-	if (*av == '\0')
+	if (*av == '\0' || if_just_spaces(av))
 	{
 		write(2, "Error\n", 7);
 		free_stack(a);
@@ -56,7 +56,7 @@ void	stack_fill(t_stack **a, char **av)
 	while (*av)
 	{
 		nbr = ft_atoi(*av);
-		if (nbr < INT_MIN || nbr > INT_MAX)
+		if (nbr > INT_MAX)
 		{
 			write(2, "Error\n", 6);
 			free_stack(a);
@@ -99,6 +99,20 @@ int	append_value(t_stack **stak, int value)
 		last_node = ft_listlast(*stak);
 		node->past = last_node;
 		last_node->next = node;
+	}
+	return (1);
+}
+
+int	if_just_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (0);
+		i++;
 	}
 	return (1);
 }

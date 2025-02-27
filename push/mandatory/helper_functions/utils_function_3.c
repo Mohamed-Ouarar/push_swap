@@ -6,7 +6,7 @@
 /*   By: mouarar <mouarar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:22:31 by mouarar           #+#    #+#             */
-/*   Updated: 2025/02/20 11:32:05 by mouarar          ###   ########.fr       */
+/*   Updated: 2025/02/25 16:48:57 by mouarar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,22 +72,22 @@ void	set_index(t_stack *node)
 void	set_target_node(t_stack *a, t_stack *b)
 {
 	t_stack	*target_node;
-	t_stack	*current_a;
+	t_stack	*holder;
 	long	best_match_value;
 
 	while (b)
 	{
 		best_match_value = LONG_MAX;
-		current_a = a;
-		while (current_a)
+		holder = a;
+		while (holder)
 		{
-			if (current_a->value > b->value && \
-				current_a->value < best_match_value)
+			if (holder->value > b->value && \
+				holder->value < best_match_value)
 			{
-				best_match_value = current_a->value;
-				target_node = current_a;
+				best_match_value = holder->value;
+				target_node = holder;
 			}
-			current_a = current_a->next;
+			holder = holder->next;
 		}
 		if (best_match_value == LONG_MAX)
 			b->target_node = find_smallest(a);
